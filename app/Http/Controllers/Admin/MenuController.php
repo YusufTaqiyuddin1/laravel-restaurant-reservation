@@ -54,7 +54,7 @@ class MenuController extends Controller
             $menu->categories()->attach($request->categories);
         }
 
-        return to_route('admin.menus.index')->with('success', 'Menu created successfully.');
+        return to_route('admin.menus.index')->with('success', 'Menu Berhasil Dibuat.');
     }
 
 
@@ -100,7 +100,7 @@ class MenuController extends Controller
         if ($request->has('categories')) {
             $menu->categories()->sync($request->categories);
         }
-        return to_route('admin.menus.index')->with('success', 'Menu updated successfully.');
+        return to_route('admin.menus.index')->with('success', 'Menu Berhasil Diperbarui.');
     }
 
     /**
@@ -114,6 +114,6 @@ class MenuController extends Controller
         Storage::delete($menu->image);
         $menu->categories()->detach();
         $menu->delete();
-        return to_route('admin.menus.index')->with('danger', 'Menu deleted successfully.');
+        return to_route('admin.menus.index')->with('danger', 'Menu Berhasil Dihapus.');
     }
 }

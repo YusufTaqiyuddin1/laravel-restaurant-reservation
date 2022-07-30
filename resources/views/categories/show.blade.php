@@ -1,3 +1,6 @@
+<x-app-layout>
+    <x-slot name="header">
+    </x-slot>
 <x-guest-layout>
     <div class="container w-full px-5 py-6 mx-auto">
         <div class="grid lg:grid-cols-4 gap-y-6">
@@ -12,7 +15,7 @@
                         </p>
                     </div>
                     <div class="flex items-center justify-between p-4">
-                        <span class="text-xl text-green-600">${{ $menu->price }}</span>
+                        <span class="text-xl text-green-600">Rp.{{ $menu->price }}</span>
                     </div>
                 </div>
             @endforeach
@@ -20,3 +23,4 @@
         </div>
     </div>
 </x-guest-layout>
+</x-app-layout>

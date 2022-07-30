@@ -1,19 +1,14 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-
     <title>{{ config('app.name', 'Laravel') }}</title>
-
     <!-- Fonts -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
-
     <!-- Styles -->
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
 </head>
@@ -24,9 +19,8 @@
             class="flex flex-col flex-shrink-0 w-full text-gray-700 bg-slate-100 md:w-64 dark:text-gray-200 dark:bg-gray-800"
             x-data="{ open: false }">
             <div class="flex flex-row items-center justify-between flex-shrink-0 px-8 py-4">
-                <a href="#"
-                    class="text-lg font-semibold tracking-widest text-gray-900 uppercase rounded-lg dark:text-white focus:outline-none focus:shadow-outline">Flowtrail
-                    UI</a>
+                <a href="{{ route('dashboard') }}"
+                    class="text-lg font-semibold tracking-widest text-gray-900 uppercase rounded-lg dark:text-white focus:outline-none focus:shadow-outline">Kelompok 5</a>
                 <button class="rounded-lg md:hidden focus:outline-none focus:shadow-outline" @click="open = !open">
                     <svg fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6">
                         <path x-show="!open" fill-rule="evenodd"
@@ -42,18 +36,18 @@
                 class="flex-grow px-4 pb-4 md:block md:pb-0 md:overflow-y-auto">
                 <x-admin-nav-link :href="route('admin.categories.index')"
                     :active="request()->routeIs('admin.categories.index')">
-                    {{ __('Categories') }}
+                    {{ __('Kategori') }}
                 </x-admin-nav-link>
                 <x-admin-nav-link :href="route('admin.menus.index')" :active="request()->routeIs('admin.menus.index')">
-                    {{ __('Menus') }}
+                    {{ __('Menu') }}
                 </x-admin-nav-link>
                 <x-admin-nav-link :href="route('admin.tables.index')"
                     :active="request()->routeIs('admin.tables.index')">
-                    {{ __('Tables') }}
+                    {{ __('Meja') }}
                 </x-admin-nav-link>
                 <x-admin-nav-link :href="route('admin.reservations.index')"
                     :active="request()->routeIs('admin.reservations.index')">
-                    {{ __('Reservations') }}
+                    {{ __('Reservasi') }}
                 </x-admin-nav-link>
                 <div @click.away="open = false" class="relative" x-data="{ open: false }">
                     <button @click="open = !open"
@@ -80,7 +74,7 @@
                                 <x-dropdown-link :href="route('logout')" onclick="event.preventDefault();
                                                 this.closest('form').submit();"
                                     class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark:bg-transparent dark:hover:bg-gray-600 dark:focus:bg-gray-600 dark:focus:text-white dark:hover:text-white dark:text-gray-200 md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline">
-                                    {{ __('Log Out') }}
+                                    {{ __('Keluar') }}
                                 </x-dropdown-link>
                             </form>
                         </div>

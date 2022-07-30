@@ -47,7 +47,7 @@ class TableController extends Controller
             'location' => $request->location,
         ]);
 
-        return to_route('admin.tables.index')->with('success', 'Table created successfully.');
+        return to_route('admin.tables.index')->with('success', 'Meja Berhasil Ditambahkan.');
     }
 
     /**
@@ -83,7 +83,7 @@ class TableController extends Controller
     {
         $table->update($request->validated());
 
-        return to_route('admin.tables.index')->with('success', 'Table updated successfully.');
+        return to_route('admin.tables.index')->with('success', 'Meja Berhasil Diperbarui.');
     }
 
     /**
@@ -97,6 +97,6 @@ class TableController extends Controller
         $table->reservations()->delete();
         $table->delete();
 
-        return to_route('admin.tables.index')->with('danger', 'Table daleted successfully.');
+        return to_route('admin.tables.index')->with('danger', 'Meja Berhasil Dihapus.');
     }
 }

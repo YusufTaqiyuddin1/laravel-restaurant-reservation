@@ -10,10 +10,15 @@ class WelcomeController extends Controller
 {
     public function index()
     {
-        $specials = Category::where('name', 'specials')->first();
-
-        return view('welcome', compact('specials'));
+        return view('auth.login');
     }
+
+
+    public function show(Category $category)
+    {
+        return view('categories.show', compact('category'));
+    }
+
     public function thankyou()
     {
         return view('thankyou');
